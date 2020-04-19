@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestViewbox"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow"
+        WindowStyle="None"
+        WindowState="Maximized">
+    <Viewbox Stretch="Uniform">
+        <!-- https://stackoverflow.com/a/26537217/6131611 -->
+        <Grid Width="1920" Height="1080">
+            <Grid Name="Grid1" Background="Green">
+                <Grid Width="400" Height="400" Background="LightGreen" />
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Name="Text1" FontSize="32" TextAlignment="Center" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Viewbox>  
 </Window>

@@ -23,6 +23,15 @@ namespace TestViewbox
         public MainWindow()
         {
             InitializeComponent();
+
+            SizeChanged += (s, e) =>
+            {
+                Text1.Text = string.Join("\n", new[] {
+                    "Viewbox size:",
+                    $"{Grid1.ActualWidth:0.###} x {Grid1.ActualHeight:0.###}",
+                    "logical pixels",
+                });
+            };
         }
     }
 }
